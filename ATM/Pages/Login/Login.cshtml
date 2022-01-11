@@ -1,0 +1,33 @@
+﻿@page
+@model ATM.Pages.LoginModel
+@{
+}
+<div style="display: flex; justify-content: center; align-items: center; text-align: center; min-height: 80vh;">
+
+    <form method="post">
+        <h3 style="margin-bottom: 30px">Login</h3>
+
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="UserLogin.Username"></label>
+            </div>
+            <div class="col-5">
+                <input type="text" asp-for="UserLogin.Username" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="UserLogin.Password"></label>
+            </div>
+            <div class="col-5">
+                <input type="password" asp-for="UserLogin.Password" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-2">
+                <input type="submit" class="btn btn-primary" value="Login" />
+            </div>
+
+        </div>
+    </form>
+</div>

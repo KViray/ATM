@@ -1,0 +1,21 @@
+﻿@page "Index"
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div style="width: 80%; margin-top: 4em">
+    <form method="post" asp-page-handler="logout">
+        <input style="margin-left: 90%" type="submit" value="Logout" class="btn btn-primary" />
+    </form>
+            
+            <h3 style="margin-top: 2em">User: @Model.Username</h3>
+            <h4 style="margin-top: 1em"> Balance: @Model.Balance </h4>
+            
+
+            <form method="post" >
+                <input type="text" asp-for="Amount" />
+                <input style="margin-left: 70%" type="submit" value="Debit Balance" asp-page-handler="debit" class="btn btn-primary" />
+                <input style="float: right" type="submit" placeholder="test" value="Credit Balance" asp-page-handler="credit" class="btn btn-danger" />
+            </form>
+</div>
