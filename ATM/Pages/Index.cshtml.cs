@@ -34,7 +34,7 @@ namespace ATM.Pages
             var username = _appContext.User.Where(user => user.Username == HttpContext.Session.GetString("Username"));
             if (username.Any())
             {
-                username.FirstOrDefault().Balance += Amount;
+                username.FirstOrDefault().Balance -= Amount;
                 Balance = username.FirstOrDefault().Balance;
                await  _appContext.SaveChangesAsync();
                 ModelState.Clear();
@@ -50,7 +50,7 @@ namespace ATM.Pages
             var username = _appContext.User.Where(user => user.Username == HttpContext.Session.GetString("Username"));
             if (username.Any())
             {
-                username.FirstOrDefault().Balance -= Amount;
+                username.FirstOrDefault().Balance += Amount;
                 Balance = username.FirstOrDefault().Balance;
                 await _appContext.SaveChangesAsync();
                 ModelState.Clear();
